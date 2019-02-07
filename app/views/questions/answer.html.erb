@@ -1,0 +1,22 @@
+<% if params[:question] == "I am going to work"%>
+<% answer = "Great" %>
+<% elsif params[:question][-1] == "?" %>
+<% answer = "Silly question, get dressed and go to work!" %>
+<% else %>
+<% answer = "I don't care, get dressed and go to work!"%>
+<% end %>
+
+<h1>Stupid Coaching</h1>
+<div class="container">
+  <div class="card">
+    <p><%= params[:question] %></p>
+    <p> - You</p>
+  </div>
+  <div class="card">
+    <p><strong><%= answer %></strong></p>
+    <p>- Your coach</p>
+  </div>
+  <div><p class="btn-ghost"><%= link_to "Ask again", ask_path %></p></div>
+</div>
+
+
